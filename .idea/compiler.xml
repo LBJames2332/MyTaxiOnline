@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-passenger" />
         <module name="MyTaxiOnline" />
+        <module name="api-consumer" />
+        <module name="cloud-eureka" />
         <module name="eureka" />
       </profile>
     </annotationProcessing>
@@ -15,6 +17,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-passenger" options="-parameters" />
+      <module name="cloud-eureka" options="-parameters" />
       <module name="eureka" options="-parameters" />
     </option>
   </component>

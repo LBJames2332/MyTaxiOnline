@@ -1,0 +1,25 @@
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      z1: http://localhost:7911/eureka/,http://localhost:7912/eureka/
+      z2: http://localhost:7921/eureka/,http://localhost:7922/eureka/
+    region: cq
+    availability-zones:
+      cq: z2
+      prefer-same-zone-eureka: true
+
+  instance:
+    #主动续约间隔
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 1
+    metadata-map:
+      zone: z2
+    instance-id: ${spring.application.name}:${server.port}
+spring:
+  application:
+    name: api-passenger
+
+zone:
+  name: cqz2

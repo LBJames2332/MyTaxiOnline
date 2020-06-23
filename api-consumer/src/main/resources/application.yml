@@ -1,0 +1,29 @@
+server:
+  port: 8091
+
+eureka:
+  client:
+    service-url:
+      z1: http://localhost:7911/eureka/,http://localhost:7912/eureka/
+      z2: http://localhost:7921/eureka/,http://localhost:7922/eureka/
+    region: cq
+    availability-zones:
+      cq: z1,z2
+    prefer-same-zone-eureka: true
+
+  instance:
+
+    lease-renewal-interval-in-seconds: 1
+
+    lease-expiration-duration-in-seconds: 1
+    hostname: localhost
+
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: api-consumer
+    metadata-map:
+      zone: z1
+
+spring:
+  application:
+    name: api-consumer
